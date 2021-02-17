@@ -9,8 +9,8 @@ from flask_cors import CORS
 from termcolor import colored
 
 
-app = Flask(__name__)
-CORS(app)
+back_end_api = Flask(__name__)
+CORS(back_end_api)
 
 
 @app.route('/')
