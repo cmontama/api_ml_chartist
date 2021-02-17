@@ -16,3 +16,4 @@ gunicorn
 google-cloud-storage==1.26.0
 scikit-learn
 termcolor
+six==1.15.0
