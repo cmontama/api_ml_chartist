@@ -9,8 +9,8 @@ from flask_cors import CORS
 from termcolor import colored
 
 
-back_end_api = Flask(__name__) #needs to be the file name
-CORS(back_end_api)
+app = Flask(__name__)                                                  #needs to be the file name
+CORS(app)
 
 
 @app.route('/')
@@ -21,4 +21,4 @@ def index():
 
 
 if __name__ == '__main__':
-    back_end_api.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(host='127.0.0.1', port=8080, debug=True)
