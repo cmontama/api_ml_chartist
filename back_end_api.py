@@ -9,7 +9,7 @@ from flask_cors import CORS
 from termcolor import colored
 
 
-back_end_api = Flask(__name__)
+back_end_api = Flask(__name__) #needs to be the file name
 CORS(back_end_api)
 
 
