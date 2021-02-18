@@ -7,9 +7,13 @@ st.markdown("**🚀 NASDAQ stocks prediction (attempt) 🚀**")
 st.markdown("""ML Chartist gives you the opportunity to run backtest to measure
 the effectiveness of investment strategies of our""")
 
+st.markdown("Our (amazing, super-effective and transcendental) model gives **_you_** the stock the most likely to have the best positive returns")
+
+st.markdown("")
+
 
 # Ask how many stocks user want to invest in
-    #  restric to [1-10]
+    # Restric to [1-10]
     # Warn that a too low number (1,2) is unlikely to give the best returns
     # Warn that a too high number (7+) is unlikely to give better returns than average
     # Show graph
