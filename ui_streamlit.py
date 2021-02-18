@@ -8,7 +8,7 @@ st.markdown("""ML Chartist gives you the opportunity to run backtest to measure
 the effectiveness of investment strategies of our""")
 
 st.markdown("""Our (amazing, super-effective and transcendental) model gives
-    ***you*** the stock the most likely to have the best positive returns""")
+    ***you*** the most likely stocks to have the best positive returns""")
 
 st.markdown("## Create a portfolio based on the NASDAQ100 companies")
 
@@ -19,14 +19,15 @@ st.markdown("## Create a portfolio based on the NASDAQ100 companies")
     # Warn that a too high number (7+) is unlikely to give better returns than average
     # Show graph
 
-@st.cache
+n_stock = st.slider('Select the number of companies', 1, 10, 5)
+
+
 def main():
     """Ask how many stocks user want to invest in
     Restricts to [1-10]
     Warn that a too low number (1,2) is unlikely to give the best returns
     Warn that a too high number (7+) is unlikely to give better returns than average
     Show graph"""
-    n_stock = st.slider('Select the number of companies', 1, 10, 5)
     print(f"User selected {n_stock} stocks for his portfolio")
     if n_stock <= 3:
         st.markdown("⚠️⚠️⚠️")
