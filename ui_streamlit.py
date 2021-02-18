@@ -8,8 +8,10 @@ st.markdown("""ML Chartist gives you the opportunity to run backtest to measure
 the effectiveness of investment strategies of our""")
 
 
-# Ask what stock(s) user want to invest in
-    # Show most likely return
+# Ask how many stocks user want to invest in
+    #  restric to [1-10]
+    # Warn that a too low number (1,2) is unlikely to give the best returns
+    # Warn that a too high number (7+) is unlikely to give better returns than average
     # Show graph
 
 
