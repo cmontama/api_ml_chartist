@@ -1,6 +1,6 @@
 import streamlit as st
 
-import request
+import requests
 
 import numpy as np
 import pandas as pd
@@ -76,6 +76,17 @@ def main():
 
     #trigger API request with the number of stocks [http://domain]/api/backtest?companies=3
 
+    url = f'https://mlchartist-server.herokuapp.com/api/backtest?companies={n_stock}'
+    st.warning('Mysterious backend stuff going on')
+    response = requests.get(url).json()
+    st.info('Getting JSON data')
+    returns_df = pd.DataFrame(response)
+    returns_df['date'] = pd.to_datetime(returns_df['date'])
+    returns_df.set_index('date', inplace=True)
+    response_df = response_df.fillna(value=1)
+    viz_df = response_df.cumprod()
+    st.info('Returns visualisation ready to be shown')
+    st.line_chart(viz_df)
 
 
 

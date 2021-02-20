@@ -19,3 +19,4 @@ termcolor
 six==1.15.0
 streamlit
 git+https://github.com/marcin-sobocinski/mlchartist.git
+requests
