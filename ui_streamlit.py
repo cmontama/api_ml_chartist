@@ -5,8 +5,6 @@ import requests
 import numpy as np
 import pandas as pd
 
-from termcolor import colored
-
 # add all the necessary functions import (in a dedicated launch.py file?)
 
 st.markdown("# ML Chartist")
@@ -109,10 +107,10 @@ def main():
     st.markdown("""## 🏦 Portfolio Performance Compared to the NASDAQ-100 average 🏦""")
     st.markdown("How much better than the index the portfolio predicted returns are ?")
 
-    if diff.ret_NDX.sum() > 0:
-        st.write("The portfolio predicted returns are ", colored(f'{diff.ret_NDX.sum() * 100}', 'green'), "%""better")
+    if diff.ret_NDX.sum() >= 0:
+        st.write("The portfolio predicted returns are ",diff.ret_NDX.sum() * 100 , "%"," better")
     elif diff.ret_NDX.sum() <= 0:
-        st.write("The portfolio predicted returns are ", colored(f'{diff.ret_NDX.sum() * 100}', 'red'), "% worse")
+        st.write("The portfolio predicted returns are ",diff.ret_NDX.sum() * 100 , "% worse")
 
 
 
