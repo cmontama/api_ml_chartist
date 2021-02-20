@@ -72,7 +72,7 @@ def main():
         # Prepare Performance DataFrame
     diff = pd.DataFrame()
     diff['ret_NDX'] = returns_df['avg_return'] - returns_df['NDX']
-    returns_df.rename(columns={'NDX': 'NASDAQ-100 Index', 'avg_return':'Portfolio Predicted Returns'})
+    returns_df.rename(columns={'NDX': 'NASDAQ-100 Index', 'avg_return':'Portfolio Predicted Returns'}, inplace=True)
     returns_df.set_index('date', inplace=True)
     returns_df = returns_df.fillna(value=1)
     viz_df = returns_df.cumprod()
@@ -83,9 +83,9 @@ def main():
     #st.markdown("How much better than the index the portfolio predicted returns are ?")
 
     if diff.ret_NDX.sum() >= 0:
-        st.write("The portfolio predicted returns are ",round(diff.ret_NDX.sum() * 100, 3), "%"," better")
+        st.write("The portfolio predicted returns are ",round(diff.ret_NDX.sum() * 100, 3), "%"," better than index average")
     elif diff.ret_NDX.sum() <= 0:
-        st.write("The portfolio predicted returns are ",round(diff.ret_NDX.sum() * 100, 3), "% worse")
+        st.write("The portfolio predicted returns are ",round(diff.ret_NDX.sum() * 100, 3), "% worse than index average")
 
 
 
