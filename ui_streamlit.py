@@ -77,7 +77,7 @@ def main():
     #trigger API request with the number of stocks [http://domain]/api/backtest?companies=3
 
     url = f'https://mlchartist-server.herokuapp.com/api/backtest?companies={n_stock}'
-    st.warning('Mysterious backend stuff going on')
+    st.warning('👩‍💻🎩👨‍💻 Mysterious backend stuff going on 👩‍💻🎩👨‍💻')
     response = requests.get(url).json()
     st.info('Getting JSON data')
     returns_df = pd.DataFrame(response)
@@ -85,8 +85,14 @@ def main():
     returns_df.set_index('date', inplace=True)
     returns_df = returns_df.fillna(value=1)
     viz_df = returns_df.cumprod()
-    st.info('Returns visualisation ready to be shown')
-    st.line_chart(viz_df)
+    st.info('🔮🔮🔮 Returns visualisation ready to be shown 🔮🔮🔮')
+
+    st.markdown("""🧞‍♀️🧞‍♀️🧞‍♀️ Which graph do you prefer: 🧞‍♀️🧞‍♀️🧞‍♀️""")
+    graph_type = st.radio('Choose your chart:', ('Line Chart', 'Area Chart'))
+    if graph_type == 'Line Chart':
+        st.line_chart(viz_df)
+    elif graph_type == 'Area Chart':
+        st.area_chart(viz_df)
 
 
 
