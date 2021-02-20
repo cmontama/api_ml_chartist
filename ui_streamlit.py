@@ -49,7 +49,7 @@ def main():
         st.error("""⚠️⚠️⚠️
             The selected portfolio contains too many stocks.
             In order to avoid a unoptimal return (too close from the
-            average return, i.e the NASDAQ100 one) please select a lower number
+            average return, i.e the NASDAQ-100 one) please select a lower number
             of companies.
             ⚠️⚠️⚠️""")
 
