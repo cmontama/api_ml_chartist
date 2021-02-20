@@ -83,8 +83,8 @@ def main():
     returns_df = pd.DataFrame(response)
     returns_df['date'] = pd.to_datetime(returns_df['date'])
     returns_df.set_index('date', inplace=True)
-    response_df = response_df.fillna(value=1)
-    viz_df = response_df.cumprod()
+    returns_df = returns_df.fillna(value=1)
+    viz_df = returns_df.cumprod()
     st.info('Returns visualisation ready to be shown')
     st.line_chart(viz_df)
 
