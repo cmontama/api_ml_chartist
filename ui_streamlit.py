@@ -18,26 +18,7 @@ st.markdown("""Our (amazing, super-effective and transcendental) model gives
 
 st.markdown("## Create a portfolio based on the NASDAQ-100 companies")
 
-n_stock = st.slider('Select the number of companies', 1, 10, 5)
-
-
-def built_comp_list(predictions, n=1):
-    cmp_dict = {}
-    for dt in predictions.columns:
-        dt_serie = predictions[dt].sort_values(ascending=False)
-        dt_serie_non_zero = dt_serie[dt_serie != 0]
-        comp_list = list(dt_serie_non_zero.head(n).index)
-        cmp_dict[dt.strftime('%Y-%m-%d')] = comp_list
-    return cmp_dict
-
-def bckt_time_window(dt, bck_test_df, comp_list):
-    comp_series = {}
-    for comp in bck_test_df.columns:
-        if comp in comp_list:
-            comp_series[comp] = bck_test_df[comp][dt:].head(10).sort_index(ascending=False)
-        else:
-            comp_series[comp] = pd.Series(index=bck_test_df[dt:].head(10).index, data = np.nan)
-    return pd.DataFrame(comp_series)
+n_stock = st.slider('Select the number of companies', 1, 15, 5)
 
 
 
