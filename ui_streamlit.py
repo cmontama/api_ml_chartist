@@ -41,11 +41,6 @@ def main():
             Research have shown you should add more stock in your
             portfolio in order to get a better return.
             ⚠️⚠️⚠️""")
-        # st.markdown("The selected portfolio contains too few stocks")
-        # st.markdown("""Research have shown you should add more stock in your
-        #     portfolio in order to get a better return""")
-        # st.markdown("⚠️⚠️⚠️")
-
 
     # Improvement idea: run the integral of the portfolio return against the
     #   index one to increase robustness of stock number selection
@@ -57,18 +52,18 @@ def main():
             average return, i.e the NASDAQ100 one) please select a lower number
             of companies.
             ⚠️⚠️⚠️""")
-        # st.markdown("⚠️⚠️⚠️")
-        # st.markdown("The selected portfolio contains too many stocks")
-        # st.markdown("""In order to avoid a unoptimal return (too close from the
-        #     average return, i.e the NASDAQ100 one) please select a lower number
-        #     of companies""")
-        # st.markdown("⚠️⚠️⚠️")
 
 
-    url = f'https://mlchartist-server.herokuapp.com/api/backtest?companies={n_stock}'
-    st.warning('👩‍💻🎩👨‍💻 Mysterious backend stuff going on 👩‍💻🎩👨‍💻')
+    if n_stock <=10:
+        url = f'https://mlchartist-server.herokuapp.com/api/backtest?companies={n_stock}'
+
+    elif n_stock >10:
+        url = f'https://mlchartist-server.herokuapp.com/api/live-backtest?companies={n_stock}'
+
 
     # Trigger API request with the number of stocks
+    st.warning('👩‍💻🎩👨‍💻 Mysterious backend stuff going on 👩‍💻🎩👨‍💻')
+
     response = requests.get(url).json()
 
     # Preprocessing DataFrame
