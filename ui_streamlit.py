@@ -101,22 +101,16 @@ def main():
     returns_df.set_index('date', inplace=True)
     returns_df = returns_df.fillna(value=1)
     viz_df = returns_df.cumprod()
-    st.info('🔮🔮🔮 Returns visualisation ready to be shown 🔮🔮🔮')
-
-    st.markdown("""🧞‍♀️🧞‍♀️🧞‍♀️ Which graph do you prefer: 🧞‍♀️🧞‍♀️🧞‍♀️""")
-    graph_type = st.radio('Choose your chart:', ('Line Chart', 'Area Chart'))
-    if graph_type == 'Line Chart':
-        st.line_chart(viz_df)
-    elif graph_type == 'Area Chart':
-        st.area_chart(viz_df)
+    st.info('🔮🧞‍♀️🔮 Returns visualisation ready to be shown 🔮🧞‍♀️🔮')
+    st.line_chart(viz_df)
 
     st.markdown("""## 🏦 Portfolio Performance Compared to the NASDAQ-100 average 🏦""")
     st.markdown("How much better than the index the portfolio predicted returns are ?")
 
     if diff.ret_NDX.sum() >= 0:
-        st.write("The portfolio predicted returns are ",diff.ret_NDX.sum() * 100 , "% better")
+        st.success("The portfolio predicted returns are ",diff.ret_NDX.sum() * 100 , "% better")
     elif diff.ret_NDX.sum() <= 0:
-        st.write("The portfolio predicted returns are ",diff.ret_NDX.sum() * 100 , "% worse")
+        st.error("The portfolio predicted returns are ",diff.ret_NDX.sum() * 100 , "% worse")
 
 
 
