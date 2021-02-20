@@ -110,7 +110,7 @@ def main():
     st.markdown("How much better than the index the portfolio predicted returns are ?")
 
     if diff.ret_NDX.sum() > 0:
-        st.write("The portfolio predicted returns are ", colored(f'{diff.ret_NDX.sum() * 100}', 'green') , "% better")
+        st.write("The portfolio predicted returns are ", colored(f'{diff.ret_NDX.sum() * 100}', 'green'), "%""better")
     elif diff.ret_NDX.sum() <= 0:
         st.write("The portfolio predicted returns are ", colored(f'{diff.ret_NDX.sum() * 100}', 'red'), "% worse")
 
