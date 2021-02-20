@@ -108,9 +108,9 @@ def main():
     st.markdown("How much better than the index the portfolio predicted returns are ?")
 
     if diff.ret_NDX.sum() >= 0:
-        st.write("The portfolio predicted returns are ",diff.ret_NDX.sum() * 100 , "%"," better")
+        st.write("The portfolio predicted returns are ",round(diff.ret_NDX.sum() * 100, 3), "%"," better")
     elif diff.ret_NDX.sum() <= 0:
-        st.write("The portfolio predicted returns are ",diff.ret_NDX.sum() * 100 , "% worse")
+        st.write("The portfolio predicted returns are ",round(diff.ret_NDX.sum() * 100, 3), "% worse")
 
 
 
