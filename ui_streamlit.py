@@ -89,7 +89,6 @@ def main():
 
     # Trigger API request with the number of stocks
     response = requests.get(url).json()
-    st.info('Getting JSON data')
 
     # Preprocessing DataFrame
     returns_df = pd.DataFrame(response)
@@ -104,8 +103,8 @@ def main():
     st.info('🔮🧞‍♀️🔮 Returns visualisation ready to be shown 🔮🧞‍♀️🔮')
     st.line_chart(viz_df)
 
-    st.markdown("""## 🏦 Portfolio Performance Compared to the NASDAQ-100 average 🏦""")
-    st.markdown("How much better than the index the portfolio predicted returns are ?")
+    #st.markdown("""## 🏦 Portfolio Performance Compared to the NASDAQ-100 average 🏦""")
+    #st.markdown("How much better than the index the portfolio predicted returns are ?")
 
     if diff.ret_NDX.sum() >= 0:
         st.write("The portfolio predicted returns are ",round(diff.ret_NDX.sum() * 100, 3), "%"," better")
