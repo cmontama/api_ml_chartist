@@ -1,5 +1,7 @@
 import streamlit as st
 
+import request
+
 import numpy as np
 import pandas as pd
 
@@ -72,9 +74,11 @@ def main():
         st.markdown("⚠️⚠️⚠️")
 
 
+    #trigger API request with the number of stocks [http://domain]/api/backtest?companies=3
 
 
 
 
 if __name__ == "__main__":
     main()
+
