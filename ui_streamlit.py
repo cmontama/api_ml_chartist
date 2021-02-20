@@ -107,10 +107,10 @@ def main():
     st.markdown("""## 🏦 Portfolio Performance Compared to the NASDAQ-100 average 🏦""")
     st.markdown("How much better than the index the portfolio predicted returns are ?")
 
-    if diff.ret_NDX.sum() >= 0:
-        st.success("The portfolio predicted returns are ",diff.ret_NDX.sum() * 100 , "% better")
+    if diff.ret_NDX.sum() > 0:
+        st.write("The portfolio predicted returns are ", colored(f'{diff.ret_NDX.sum() * 100}', 'green') , "% better")
     elif diff.ret_NDX.sum() <= 0:
-        st.error("The portfolio predicted returns are ",diff.ret_NDX.sum() * 100 , "% worse")
+        st.write("The portfolio predicted returns are ", colored(f'{diff.ret_NDX.sum() * 100}', 'red'), "% worse")
 
 
 
