@@ -5,6 +5,8 @@ import requests
 import numpy as np
 import pandas as pd
 
+from termcolor import colored
+
 # add all the necessary functions import (in a dedicated launch.py file?)
 
 st.markdown("# ML Chartist")
