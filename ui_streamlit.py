@@ -11,7 +11,7 @@ st.markdown("# ML Chartist")
 st.markdown("**🚀 NASDAQ stocks prediction 🚀**")
 
 st.markdown("""ML Chartist gives you the opportunity to run backtest to measure
-the effectiveness of investment strategies of our""")
+the effectiveness of investment strategies of our model""")
 
 st.markdown("""Our (amazing, super-effective and transcendental) model gives
     ***you*** the most likely stocks to have the best positive returns""")
