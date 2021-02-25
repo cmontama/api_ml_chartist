@@ -11,7 +11,7 @@ st.markdown("# ML Chartist")
 st.markdown("**🚀 NASDAQ stocks prediction 🚀**")
 
 st.markdown("""ML Chartist gives you the opportunity to run backtest to measure
-the effectiveness of investment strategies of our model""")
+the effectiveness of our model investment strategies""")
 
 st.markdown("""Our (amazing, super-effective and transcendental) model gives
     ***you*** the most likely stocks to have the best positive returns""")
@@ -38,7 +38,7 @@ def main():
     if n_stock <= 3:
         st.error("""⚠️⚠️⚠️
             The selected portfolio contains too few stocks.
-            Research have shown you should add more stock in your
+            Research have shown you should add more stocks in your
             portfolio in order to get a better return.
             ⚠️⚠️⚠️""")
 
