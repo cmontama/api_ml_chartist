@@ -9,7 +9,7 @@
 ## Process Description
 - **Data Aquisition & Preparation** :
   - company stocks history CSV file download
-  - financial indicators computation (chartist analysis)
+  - financial technical indicators computation (chartist analysis)
   - financial returns computation
   - merging of selected stocks into a single Pandas Dataframe
 
