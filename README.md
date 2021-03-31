@@ -37,7 +37,7 @@
 
 
 
-## Note
+## *Note*
 -**Model Accuracy :**
   - The accuracy is the ratio of correct predictions
   - ex: for 45% accuracy, 45% of stocks returns were correctly predicted to be less than 5%, and the 55% others were incorrectly predicted to be lower than 5%
