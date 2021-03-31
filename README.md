@@ -38,12 +38,12 @@
 
 
 ## *Note*
--**Model Accuracy :**
+- **Model Accuracy :**
   - The accuracy is the ratio of correct predictions
   - ex: for 45% accuracy, 45% of stocks returns were correctly predicted to be less than 5%, and the 55% others were incorrectly predicted to be lower than 5%
   - Accuracy ~ 1 - *rate of missed opportunities* (in our case not using good stock returns)
 
--**Model Precision :**
+- **Model Precision :**
   - The precision measures the ratio of correct predictions of **a class**
   - ex: for 60% precision, 60% of stocks returns were correctly predicted to be more than 5% but the 40% others were incorrectly predicted to be higher than 5%
   - Precision ~ 1 - *rate of false positive* (in our case using bad stock returns)
